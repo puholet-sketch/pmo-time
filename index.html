@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Консалтинг-плейбук учёта времени в проектном офисе: Jira Epic → Story → Subtask, план/факт, SLA, правила списания." />
+  <title>FACT · Учёт времени в PMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="top">
+    <div class="top__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">FA<span>CT</span></span>
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="#model">Модель</a>
+        <a href="#map">Контуры</a>
+        <a href="#flows">Схемы</a>
+        <a href="#rules">Правила</a>
+        <a href="#contact" class="nav__cta">Связь</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav-mobile" hidden>
+      <a href="#model">Модель</a>
+      <a href="#map">Контуры</a>
+      <a href="#flows">Схемы</a>
+      <a href="#rules">Правила</a>
+      <a href="#contact">Связь</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__mesh"></div>
+      </div>
+      <div class="hero__content">
+        <p class="brand-hero">FACT</p>
+        <h1>Учёт времени, который сходится с&nbsp;табелем</h1>
+        <p class="hero__lead">Плейбук проектного офиса: куда списывать часы в Jira, кто заводит Epic, как связаны оценка, реализация, SLA и контроль план/факт — без разрозненных Excel и «устных» правил.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#flows">Смотреть схемы</a>
+          <a class="btn btn--ghost" href="#rules">Правила списания</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Для кого">
+      <p>Для команд, где уже есть Jira, но <strong>факт часов</strong> не стыкуется с бюджетом Epic, табелем и отчётами руководству. Обобщённый консалтинг-кейс по живой практике PMO (без привязки к конкретному работодателю).</p>
+    </section>
+
+    <section class="section" id="model">
+      <div class="section__head">
+        <h2>Модель в Jira</h2>
+        <p>Одна иерархия для всех контуров. Часы почти всегда живут в Subtask; Epic держит план и закрытие.</p>
+      </div>
+      <div class="hierarchy">
+        <div class="hierarchy__box">Epic<br><span>бюджет · план · тип работ</span></div>
+        <span class="hierarchy__arrow" aria-hidden="true">→</span>
+        <div class="hierarchy__box">Story<br><span>единица функционала / заявки</span></div>
+        <span class="hierarchy__arrow" aria-hidden="true">→</span>
+        <div class="hierarchy__box hierarchy__box--accent">Subtask<br><span>сюда списывает исполнитель</span></div>
+      </div>
+      <div class="roles">
+        <article><h3>ПМ / ГРП</h3><p>Story и Subtask, оценка, приёмка, уведомления финансам и аккаунту.</p></article>
+        <article><h3>Финансы</h3><p>Регистрация Epic по заявке, связь с договором, отчёты и сверка с табелем.</p></article>
+        <article><h3>Исполнитель</h3><p>Log Work в своём Subtask: затрачено, осталось, комментарий, день факта.</p></article>
+        <article><h3>ОД / ТД</h3><p>Мониторинг план/факт по периоду, проекту и эпику.</p></article>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="map">
+      <div class="section__head section__head--light">
+        <h2>Контуры учёта</h2>
+        <p>Шесть рабочих контуров вместо десятка разрозненных разделов. Логика одна: заявка → согласование → Epic → работы → факт → закрытие.</p>
+      </div>
+      <div class="map">
+        <article class="map__card">
+          <div class="map__n">01</div>
+          <h3>Годовое планирование</h3>
+          <p>Оценки, SLA-сервис, собеседования, косвенные затраты тимлидов, простои/совещания, управление подразделениями — один шаблон запуска Epic.</p>
+        </article>
+        <article class="map__card">
+          <div class="map__n">02</div>
+          <h3>Фикс. бюджет</h3>
+          <p>Оценка → согласование → Epic реализации → перенос Story → приёмка клиентом → акты.</p>
+        </article>
+        <article class="map__card">
+          <div class="map__n">03</div>
+          <h3>Оценка в Jira</h3>
+          <p>Story оценки + Subtask типа «Оценка»: предмет, декомпозиция, суммарная оценка, фактические часы.</p>
+        </article>
+        <article class="map__card">
+          <div class="map__n">04</div>
+          <h3>SLA / поддержка</h3>
+          <p>1-я линия закрывает консультацию в Issue; эскалация — Issue в Epic сервиса + Subtask на 2-й линии.</p>
+        </article>
+        <article class="map__card">
+          <div class="map__n">05</div>
+          <h3>Presale · HR · прочее</h3>
+          <p>Presale и обучение — отдельный Epic; собеседования — Story; простои/митинги — выделенные Story в годовых Epic.</p>
+        </article>
+        <article class="map__card">
+          <div class="map__n">06</div>
+          <h3>Контроль</h3>
+          <p>Ежемесячный отчёт по Epic, еженедельный список «должников» по списаниям, сверка Jira ↔ табель.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="flows">
+      <div class="section__head">
+        <h2>Ключевые схемы</h2>
+        <p>Четыре потока вместо длинных sequence на каждый подраздел. Участники — роли, не фамилии.</p>
+      </div>
+
+      <article class="flow">
+        <h3>1. Универсальный запуск годового Epic</h3>
+        <p class="flow__lead">Одинаково для оценок, SLA-бюджета, собеседований, тимлид-косвенных и т.п. — меняются только инициатор, согласующий и тип Epic.</p>
+        <div class="mermaid-wrap">
+          <pre class="mermaid">
+flowchart LR
+  A[Инициатор<br/>ПМ / ТД / HR / рук.] --> B[Согласующий<br/>Аккаунт / ОД / ГД]
+  B --> C[Заявка финансам<br/>email]
+  C --> D[Финансы<br/>регистрируют Epic]
+  D --> E[Команда работает<br/>в Story / Subtask]
+          </pre>
+        </div>
+        <ul class="flow__notes">
+          <li><strong>Оценка</strong> — Epic (Оценка); инициатор ПМ (улучшения — ТД).</li>
+          <li><strong>SLA</strong> — Epic (Сервис) + связь с контрактом.</li>
+          <li><strong>Простои / митинги</strong> — годовой Epic + Story (Downtime / Meeting), нулевой бюджет.</li>
+        </ul>
+      </article>
+
+      <article class="flow">
+        <h3>2. Фикс. бюджет: от оценки до закрытия</h3>
+        <p class="flow__lead">Две фазы в одной схеме. Часы на оценке и на реализации списываются в Subtask; закрывает Epic после приёмки.</p>
+        <div class="mermaid-wrap">
+          <pre class="mermaid">
+flowchart TB
+  subgraph Est["Фаза оценки"]
+    E1[Story в Epic Оценка] --> E2[Subtask исполнителям]
+    E2 --> E3[Списание часов]
+    E3 --> E4[Согласование оценки<br/>Аккаунт / ОД]
+  end
+  subgraph Run["Фаза реализации"]
+    R1[Клиент даёт старт] --> R2[Финансы: Epic Реализация]
+    R2 --> R3[Story переносятся<br/>в Epic Реализация]
+    R3 --> R4[Новые Subtask + факт часов]
+    R4 --> R5[Приёмка клиента]
+    R5 --> R6[Закрытие Epic · акты]
+  end
+  Est --> Run
+          </pre>
+        </div>
+      </article>
+
+      <article class="flow">
+        <h3>3. Цепочка оценки: кто что создаёт</h3>
+        <p class="flow__lead">Важно не путать: Epic (Оценка) — контур финансов; Subtask типа «Оценка» — место списания часов на саму оценку.</p>
+        <div class="mermaid-wrap">
+          <pre class="mermaid">
+sequenceDiagram
+  participant Fin as Финансы
+  participant PM as ПМ / ТД
+  participant Ex as Исполнители
+  participant J as Jira
+  Fin->>J: Epic (Оценка) + плановые часы
+  PM->>J: Story оценки → к Epic
+  PM->>J: Subtask типа «Оценка»
+  Ex->>J: Log Work в Subtask
+  Note over Fin,J: План/факт в отчётах по Epic
+          </pre>
+        </div>
+        <div class="attrs">
+          <h4>Обязательные поля Subtask «Оценка»</h4>
+          <ul>
+            <li>Предмет оценки</li>
+            <li>Декомпозиция работ с оценками времени</li>
+            <li>Суммарная оценка исполнителей</li>
+            <li>Фактически затраченное время</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="flow">
+        <h3>4. SLA: консультация или эскалация</h3>
+        <div class="mermaid-wrap">
+          <pre class="mermaid">
+flowchart TD
+  A[Обращение клиента] --> B[1-я линия · Issue в SD]
+  B --> C{Можно закрыть<br/>консультацией?}
+  C -->|Да| D[Ответ + Log Work в Issue]
+  C -->|Нет| E[Issue в Epic Сервис]
+  E --> F{Ошибка или доработка?}
+  F -->|Ошибка| G[Назначение на QA]
+  F -->|Доработка| H[ПМ / разработка]
+  G --> I[Subtask + списание часов]
+  H --> I
+          </pre>
+        </div>
+      </article>
+
+      <div class="compact">
+        <h3>Коротко про остальные контуры</h3>
+        <div class="compact__grid">
+          <article>
+            <h4>Presale</h4>
+            <p>Аккаунт → КД → финансы регистрируют Epic (Presale) → ПМ ведёт Story/Subtask → приёмка аккаунтом → закрытие Epic.</p>
+          </article>
+          <article>
+            <h4>Собеседования</h4>
+            <p>HR определяет участников → рук. подразделения создаёт Story и Subtask → участники списывают время.</p>
+          </article>
+          <article>
+            <h4>Обучение</h4>
+            <p>Наставник согласует с рук. → Epic (Training) → Story/Subtask → факт часов → закрытие.</p>
+          </article>
+          <article>
+            <h4>Простои / митинги</h4>
+            <p>Сотрудник → рук. → Subtask в Story Downtime/Meeting → списание → закрытие Subtask.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="rules">
+      <div class="section__head">
+        <h2>Правила списания</h2>
+        <p>Минимальный набор, без которого план/факт и табель расходятся.</p>
+      </div>
+      <ol class="rules">
+        <li>
+          <strong>Списывать в Subtask внутри Epic</strong>
+          <span>Исключение: ошибка приёмки — допускается списание прямо в Issue.</span>
+        </li>
+        <li>
+          <strong>Затрачено — на день фактической работы</strong>
+          <span>Не «пачкой в пятницу задним числом без даты факта».</span>
+        </li>
+        <li>
+          <strong>Всегда: осталось + комментарий</strong>
+          <span>Комментарий описывает сделанное; «осталось» держит прогноз.</span>
+        </li>
+        <li>
+          <strong>Сумма списаний за день ≥ табеля</strong>
+          <span>Иначе еженедельный список должников и ручная сверка в конце месяца.</span>
+        </li>
+        <li>
+          <strong>Epic регистрируют финансы</strong>
+          <span>По заявке с трудоёмкостью и привязкой к проекту/договору. Нет проекта в Jira — сначала заявка на создание проекта.</span>
+        </li>
+        <li>
+          <strong>План на Epic, факт по Subtask</strong>
+          <span>Отчёты и мониторинг ОД/ТД читают эту связку, а не «среднюю температуру» по людям вне эпиков.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section section--contact" id="contact">
+      <div class="contact">
+        <div class="contact__copy">
+          <h2>Нужен такой контур у себя?</h2>
+          <p>Можем адаптировать плейбук под вашу Jira: типы Epic, роли, отчётность и онбординг команды. Это обобщённая модель — без внутренних ссылок и персональных данных.</p>
+          <p class="contact__alt">
+            <a href="mailto:sorvanovon@yandex.ru">sorvanovon@yandex.ru</a>
+            ·
+            <a href="https://t.me/puholet" target="_blank" rel="noopener">@puholet</a>
+            ·
+            <a href="https://puholet-sketch.github.io/oleg-sorvanov/">портфолио</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="brand brand--footer"><span class="brand__mark" aria-hidden="true"></span> FACT</span>
+      <p>PMO time-tracking playbook · консалтинг-кейс</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
