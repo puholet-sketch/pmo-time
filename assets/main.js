@@ -17,7 +17,7 @@
 
   if (window.mermaid) {
     mermaid.initialize({
-      startOnLoad: true,
+      startOnLoad: false,
       theme: "base",
       themeVariables: {
         primaryColor: "#fff5f5",
@@ -39,8 +39,20 @@
         altSectionBkgColor: "#faf9f8",
         sequenceNumberColor: "#ffffff",
       },
-      flowchart: { curve: "basis", htmlLabels: true, padding: 16 },
+      flowchart: { curve: "basis", htmlLabels: true, padding: 16, useMaxWidth: true },
       securityLevel: "strict",
     });
+
+    const centerSvgs = () => {
+      document.querySelectorAll(".mermaid-wrap svg").forEach((svg) => {
+        svg.style.display = "block";
+        svg.style.margin = "0 auto";
+      });
+    };
+
+    mermaid
+      .run({ querySelector: ".mermaid" })
+      .then(centerSvgs)
+      .catch(() => centerSvgs());
   }
 })();

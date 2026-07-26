@@ -287,13 +287,27 @@ a { color: inherit; }
 .flow__notes li { margin: 0.3rem 0; }
 
 .mermaid-wrap {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.85);
   overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mermaid-wrap .mermaid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
 }
 .mermaid-wrap .mermaid,
-.mermaid-wrap svg { max-width: 100%; }
+.mermaid-wrap svg {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .attrs {
   margin-top: 1rem;
