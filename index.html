@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -122,21 +121,16 @@
     <section class="section" id="flows">
       <div class="section__head">
         <h2>Ключевые схемы</h2>
-        <p>Четыре потока вместо длинных sequence на каждый подраздел. Участники — роли, не фамилии.</p>
+        <p>Draw.io-стиль: цветные роли, древовидные ветки, легенда на каждой схеме. Исходники <code>.drawio</code> лежат в репозитории — можно править в diagrams.net.</p>
       </div>
 
       <article class="flow">
         <h3>1. Универсальный запуск годового Epic</h3>
         <p class="flow__lead">Одинаково для оценок, SLA-бюджета, собеседований, тимлид-косвенных и т.п. — меняются только инициатор, согласующий и тип Epic.</p>
-        <div class="mermaid-wrap">
-          <pre class="mermaid">
-flowchart LR
-  A[Инициатор<br/>ПМ / ТД / HR / рук.] --> B[Согласующий<br/>Аккаунт / ОД / ГД]
-  B --> C[Заявка финансам<br/>email]
-  C --> D[Финансы<br/>регистрируют Epic]
-  D --> E[Команда работает<br/>в Story / Subtask]
-          </pre>
-        </div>
+        <figure class="diagram">
+          <img src="diagrams/01-annual.svg" alt="Схема: универсальный запуск годового Epic" width="920" height="220" loading="lazy" />
+          <figcaption><a href="diagrams/01-annual.drawio" download>Скачать .drawio</a></figcaption>
+        </figure>
         <ul class="flow__notes">
           <li><strong>Оценка</strong> — Epic (Оценка); инициатор ПМ (улучшения — ТД).</li>
           <li><strong>SLA</strong> — Epic (Сервис) + связь с контрактом.</li>
@@ -146,39 +140,20 @@ flowchart LR
 
       <article class="flow">
         <h3>2. Фикс. бюджет: от оценки до закрытия</h3>
-        <p class="flow__lead">Две фазы в одной схеме. Часы на оценке и на реализации списываются в Subtask; закрывает Epic после приёмки.</p>
-        <div class="mermaid-wrap">
-          <pre class="mermaid">
-flowchart TB
-  subgraph Est["Фаза оценки"]
-    E1[Story в Epic Оценка] --> E2[Subtask исполнителям]
-    E2 --> E3[Списание часов]
-    E3 --> E4[Согласование оценки<br/>Аккаунт / ОД]
-  end
-  subgraph Run["Фаза реализации"]
-    R1[Клиент даёт старт] --> R2[Финансы: Epic Реализация]
-    R2 --> R3[Story переносятся<br/>в Epic Реализация]
-    R3 --> R4[Новые Subtask + факт часов]
-    R4 --> R5[Приёмка клиента]
-    R5 --> R6[Закрытие Epic · акты]
-  end
-  Est --> Run
-          </pre>
-        </div>
+        <p class="flow__lead">Две фазы рядом. Часы на оценке и на реализации — в Subtask; закрытие Epic после приёмки.</p>
+        <figure class="diagram">
+          <img src="diagrams/02-fixed-budget.svg" alt="Схема: фикс. бюджет от оценки до закрытия" width="804" height="400" loading="lazy" />
+          <figcaption><a href="diagrams/02-fixed-budget.drawio" download>Скачать .drawio</a></figcaption>
+        </figure>
       </article>
 
       <article class="flow">
         <h3>3. Цепочка оценки: кто что создаёт</h3>
         <p class="flow__lead">Важно не путать: Epic (Оценка) — контур финансов; Subtask типа «Оценка» — место списания часов на саму оценку.</p>
-        <div class="mermaid-wrap">
-          <pre class="mermaid">
-flowchart TB
-  F["Финансы<br/>Epic (Оценка) + плановые часы"] --> P1["ПМ / ТД<br/>Story оценки → к Epic"]
-  P1 --> P2["ПМ / ТД<br/>Subtask типа «Оценка»"]
-  P2 --> E["Исполнители<br/>Log Work в Subtask"]
-  E --> R["Отчёты<br/>план/факт по Epic"]
-          </pre>
-        </div>
+        <figure class="diagram">
+          <img src="diagrams/03-estimation.svg" alt="Дерево: цепочка оценки" width="800" height="430" loading="lazy" />
+          <figcaption><a href="diagrams/03-estimation.drawio" download>Скачать .drawio</a></figcaption>
+        </figure>
         <div class="attrs">
           <h4>Обязательные поля Subtask «Оценка»</h4>
           <ul>
@@ -192,20 +167,11 @@ flowchart TB
 
       <article class="flow">
         <h3>4. SLA: консультация или эскалация</h3>
-        <div class="mermaid-wrap">
-          <pre class="mermaid">
-flowchart TD
-  A[Обращение клиента] --> B[1-я линия · Issue в SD]
-  B --> C{Можно закрыть<br/>консультацией?}
-  C -->|Да| D[Ответ + Log Work в Issue]
-  C -->|Нет| E[Issue в Epic Сервис]
-  E --> F{Ошибка или доработка?}
-  F -->|Ошибка| G[Назначение на QA]
-  F -->|Доработка| H[ПМ / разработка]
-  G --> I[Subtask + списание часов]
-  H --> I
-          </pre>
-        </div>
+        <p class="flow__lead">Дерево решений: консультация на 1-й линии или эскалация в Epic сервиса с развилкой ошибка / доработка.</p>
+        <figure class="diagram">
+          <img src="diagrams/04-sla.svg" alt="Дерево решений SLA" width="880" height="590" loading="lazy" />
+          <figcaption><a href="diagrams/04-sla.drawio" download>Скачать .drawio</a></figcaption>
+        </figure>
       </article>
 
       <div class="compact">

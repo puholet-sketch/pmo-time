@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" role="img" aria-label="Цепочка оценки">
+
+  <style>
+    .t { font: 600 13px Onest, system-ui, sans-serif; fill: #1A1A1A; }
+    .s { font: 400 11px Onest, system-ui, sans-serif; fill: #555555; }
+    .leg { font: 600 12px Onest, system-ui, sans-serif; fill: #333333; }
+    .edge { stroke: #8A0000; stroke-width: 1.75; fill: none; }
+    .arr { fill: #8A0000; }
+    .lab { font: 600 11px Onest, system-ui, sans-serif; fill: #8A0000; }
+    .phase { font: 700 12px Unbounded, Onest, system-ui, sans-serif; fill: #C00000; letter-spacing: 0.04em; }
+    .frame { fill: #FAFAFA; stroke: #E8E4E1; stroke-width: 1; }
+  </style>
+
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" class="arr"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="10" width="14" height="14" rx="2" fill="#FFF0F0" stroke="#C00000" stroke-width="1.5"/><text x="28" y="22" class="leg">Финансы</text>
+  <rect x="110" y="10" width="14" height="14" rx="2" fill="#F5F5F5" stroke="#1A1A1A" stroke-width="1.5"/><text x="130" y="22" class="leg">ПМ / ТД</text>
+  <rect x="210" y="10" width="14" height="14" rx="2" fill="#EEF6F6" stroke="#0F6B6B" stroke-width="1.5"/><text x="230" y="22" class="leg">Исполнители</text>
+  <rect x="340" y="10" width="14" height="14" rx="2" fill="#FFF7ED" stroke="#B45309" stroke-width="1.5"/><text x="360" y="22" class="leg">Решение</text>
+  <rect x="440" y="10" width="14" height="14" rx="2" fill="#F3F1EF" stroke="#666666" stroke-width="1.5"/><text x="460" y="22" class="leg">Клиент / вход</text>
+  <rect x="580" y="10" width="14" height="14" rx="2" fill="#ECFDF5" stroke="#166534" stroke-width="1.5"/><text x="600" y="22" class="leg">Закрытие</text>
+  <line x1="24" y1="40" x2="776" y2="40" stroke="#E8E4E1" stroke-width="1"/>
+  <text x="400" y="64" text-anchor="middle" class="phase">ДЕРЕВО СОЗДАНИЯ АРТЕФАКТОВ</text>
+  <rect x="270.0" y="84" width="260" height="56" rx="4" fill="#FFF0F0" stroke="#C00000" stroke-width="1.75"/><text x="400.0" y="106.0" text-anchor="middle" class="t">Финансы</text><text x="400.0" y="124.0" text-anchor="middle" class="s">Epic (Оценка) + плановые часы</text>
+  <path d="M400 140 L400 158" class="edge" marker-end="url(#arrow)"/>
+  <rect x="270.0" y="160" width="260" height="56" rx="4" fill="#F5F5F5" stroke="#1A1A1A" stroke-width="1.75"/><text x="400.0" y="182.0" text-anchor="middle" class="t">ПМ / ТД</text><text x="400.0" y="200.0" text-anchor="middle" class="s">Story оценки → к Epic</text>
+  <path d="M400 216 L400 234" class="edge" marker-end="url(#arrow)"/>
+  <rect x="270.0" y="236" width="260" height="56" rx="4" fill="#F5F5F5" stroke="#1A1A1A" stroke-width="1.75"/><text x="400.0" y="258.0" text-anchor="middle" class="t">ПМ / ТД</text><text x="400.0" y="276.0" text-anchor="middle" class="s">Subtask типа «Оценка»</text>
+  <path d="M400 292 V318" class="edge"/>
+  <path d="M290.0 318 H670.0" class="edge"/>
+  <path d="M290.0 318 V336" class="edge" marker-end="url(#arrow)"/>
+  <path d="M670.0 318 V336" class="edge" marker-end="url(#arrow)"/>
+  <rect x="160" y="340" width="260" height="56" rx="4" fill="#EEF6F6" stroke="#0F6B6B" stroke-width="1.75"/><text x="290.0" y="362.0" text-anchor="middle" class="t">Исполнители</text><text x="290.0" y="380.0" text-anchor="middle" class="s">Log Work в Subtask</text>
+  <rect x="540" y="340" width="260" height="56" rx="4" fill="#ECFDF5" stroke="#166534" stroke-width="1.75"/><text x="670.0" y="362.0" text-anchor="middle" class="t">Отчёты</text><text x="670.0" y="380.0" text-anchor="middle" class="s">план/факт по Epic</text>
+</svg>

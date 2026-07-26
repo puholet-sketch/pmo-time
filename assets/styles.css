@@ -286,24 +286,35 @@ a { color: inherit; }
 }
 .flow__notes li { margin: 0.3rem 0; }
 
-.mermaid-wrap {
-  padding: 1.5rem 1.25rem;
+.diagram {
+  margin: 0 0 1rem;
+  padding: 1.25rem 1rem 0.85rem;
   border: 1px solid var(--line);
   background: #fff;
-  overflow-x: auto;
   text-align: center;
 }
-.mermaid-wrap .mermaid {
-  display: inline-block;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 100%;
-}
-.mermaid-wrap .mermaid svg {
+.diagram img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   height: auto;
+}
+.diagram figcaption {
+  margin: 0.75rem 0 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.diagram figcaption a {
+  color: var(--crimson);
+  font-weight: 600;
+  text-decoration: none;
+}
+.diagram figcaption a:hover { text-decoration: underline; }
+.section__head code {
+  font-size: 0.9em;
+  color: var(--crimson);
 }
 
 .attrs {

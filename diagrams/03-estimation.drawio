@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-26T00:00:00.000Z" agent="FACT" version="22.0.0">
+  <diagram id="a062c9c9" name="Цепочка оценки">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="840" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Финансы\nEpic (Оценка) + плановые часы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0F0;strokeColor=#C00000;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="40" width="240" height="60" as="geometry"/></mxCell>
+        <mxCell id="n2" value="ПМ / ТД\nStory оценки → к Epic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="140" width="240" height="60" as="geometry"/></mxCell>
+        <mxCell id="n3" value="ПМ / ТД\nSubtask типа «Оценка»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="300" y="240" width="240" height="60" as="geometry"/></mxCell>
+        <mxCell id="n4" value="Исполнители\nLog Work в Subtask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF6F6;strokeColor=#0F6B6B;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="120" y="360" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="n5" value="Отчёты\nплан/факт по Epic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#166534;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="500" y="360" width="220" height="60" as="geometry"/></mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="n1" target="n2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="n2" target="n3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="n3" target="n4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="n3" target="n5"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

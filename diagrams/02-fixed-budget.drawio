@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-26T00:00:00.000Z" agent="FACT" version="22.0.0">
+  <diagram id="844c6181" name="Фикс. бюджет">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="720" pageHeight="420" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="f1" value="Story в Epic (Оценка)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="f2" value="Subtask исполнителям" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="80" y="120" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fl1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="f1" target="f2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="f3" value="Списание часов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF6F6;strokeColor=#0F6B6B;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="80" y="200" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fl2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="f2" target="f3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="f4" value="Согласование оценки" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="80" y="280" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fl3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="f3" target="f4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="r1" value="Клиент: старт" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F1EF;strokeColor=#666666;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="420" y="20" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="r2" value="Epic (Реализация)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0F0;strokeColor=#C00000;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="420" y="90" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fr1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="r1" target="r2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="r3" value="Перенос Story + Subtask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1A1A1A;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="420" y="160" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fr2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="r2" target="r3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="r4" value="Факт часов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF6F6;strokeColor=#0F6B6B;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="420" y="230" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fr3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="r3" target="r4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="r5" value="Приёмка · акты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#166534;fontStyle=1;fontSize=12;" vertex="1" parent="1"><mxGeometry x="420" y="300" width="220" height="55" as="geometry"/></mxCell>
+        <mxCell id="fr4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="r4" target="r5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="bridge" value="старт" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#8A0000;fontColor=#8A0000;" edge="1" parent="1" source="f4" target="r1"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

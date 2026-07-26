@@ -5,3 +5,11 @@
 **Live:** https://puholet-sketch.github.io/pmo-time/
 
 Обобщённая модель по практике проектного офиса. Без внутренних URL, фамилий и бренда конкретного работодателя.
+
+## Схемы
+
+В `diagrams/` — SVG для сайта и `.drawio` для редактирования в [diagrams.net](https://app.diagrams.net/).
+
+```bash
+python scripts/build_diagrams.py
+```
