@@ -172,16 +172,11 @@ flowchart TB
         <p class="flow__lead">Важно не путать: Epic (Оценка) — контур финансов; Subtask типа «Оценка» — место списания часов на саму оценку.</p>
         <div class="mermaid-wrap">
           <pre class="mermaid">
-sequenceDiagram
-  participant Fin as Финансы
-  participant PM as ПМ / ТД
-  participant Ex as Исполнители
-  participant J as Jira
-  Fin->>J: Epic (Оценка) + плановые часы
-  PM->>J: Story оценки → к Epic
-  PM->>J: Subtask типа «Оценка»
-  Ex->>J: Log Work в Subtask
-  Note over Fin,J: План/факт в отчётах по Epic
+flowchart TB
+  F["Финансы<br/>Epic (Оценка) + плановые часы"] --> P1["ПМ / ТД<br/>Story оценки → к Epic"]
+  P1 --> P2["ПМ / ТД<br/>Subtask типа «Оценка»"]
+  P2 --> E["Исполнители<br/>Log Work в Subtask"]
+  E --> R["Отчёты<br/>план/факт по Epic"]
           </pre>
         </div>
         <div class="attrs">

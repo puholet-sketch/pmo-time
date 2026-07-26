@@ -39,8 +39,7 @@
         altSectionBkgColor: "#faf9f8",
         sequenceNumberColor: "#ffffff",
       },
-      flowchart: { curve: "basis", htmlLabels: true },
-      sequence: { useMaxWidth: true, showSequenceNumbers: true },
+      flowchart: { curve: "basis", htmlLabels: true, padding: 16 },
       securityLevel: "strict",
     });
   }
